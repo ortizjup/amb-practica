@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="col-xs-12">
+        <app-editar-alumno-pop-up *ngIf="this.show" (save)="save($event)"></app-editar-alumno-pop-up>
+    </div>
+    <div class="col-xs-12">
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th colspan="8" class="text-aling-end">
+                        <button type="button" class="btn btn-success" (click)="showComponent()">Agregar Auto</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Nombre</th>
+                    <th>Patente</th>
+                    <th>Fecha Construccion Auto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of this.items">
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.marca}}</td>
+                    <td>{{item.modelo}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.patente}}</td>
+                    <td>{{item.fechaConstruccion}}</td>
+                    <td class="text-align-center">
+                        <span><a class="fa fa-pencil mr-10" (click)="edit(item)"></a></span>
+                        <span><a class="fa fa-trash" (click)="delete(item.id)"></a></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

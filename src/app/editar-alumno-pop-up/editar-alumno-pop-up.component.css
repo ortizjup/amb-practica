@@ -1,0 +1,12 @@
+.alert-danger-custom {
+    color: tomato;
+    font-weight: bold;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.width-100 {
+    width: 100%;;
+}

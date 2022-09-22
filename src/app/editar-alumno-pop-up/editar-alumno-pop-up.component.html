@@ -1,0 +1,33 @@
+<form #f="ngForm" (ngSubmit)="saveAuto(f)" novalidate> 
+    <input type="hidden" name="id" [(ngModel)]="auto.id">
+    <div class="col-xs-6">
+        <div class="form-group">
+            <label>Marca</label>
+            <input type="text" name="marca" class="form-control" [(ngModel)]="auto.marca"  #marca="ngModel" required/>
+            <small class="alert-danger-custom" [hidden]="marca.valid || (marca.pristine && !f.submitted)">Marca es input requerido.</small>
+        </div>
+        <div class="form-group">
+            <label>Modelo</label>
+            <input type="text"  name="modelo" class="form-control" [(ngModel)]="auto.modelo" #modelo="ngModel" required/>
+            <small class="alert-danger-custom" [hidden]="modelo.valid || (modelo.pristine && !f.submitted)">Modelo es input requerido.</small>
+        </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text"  name="name"  class="form-control" [(ngModel)]="auto.name" #name="ngModel" required/>
+            <small class="alert-danger-custom" [hidden]="name.valid || (name.pristine && !f.submitted)">Nombre es input requerido.</small>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="form-group">
+            <label>Patente</label>
+            <input type="text"  name="patente" class="form-control" [(ngModel)]="auto.patente" #patente="ngModel" required/>
+            <small class="alert-danger-custom" [hidden]="patente.valid || (patente.pristine && !f.submitted)">Patente es input requerido.</small>
+        </div>
+        <div class="form-group">
+            <label>Fecha Construccion</label>
+            <input type="date"  name="fechaConstruccion"  class="form-control" [(ngModel)]="auto.fechaConstruccion" #fechaConstruccion="ngModel" required/>
+            <small class="alert-danger-custom" [hidden]="fechaConstruccion.valid || (fechaConstruccion.pristine && !f.submitted)">Fecha Construccion es input requerido.</small>
+        </div>
+        <button type="submmit" name="submmitBtn" class="btn btn-primary mt-24 width-100">Guardar</button>
+    </div>
+</form>
